@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { 
   Menu, 
   X, 
-  Github, 
+  // Github, 
   Linkedin, 
   // Mail, // Removed
   Download, 
@@ -160,6 +160,12 @@ const EXPERIENCES: {
     tags: [],
     logo: metuRomerLogo
   }
+];
+
+const RELEVANT_COURSEWORK = [
+  { name: 'Deep Learning', link: 'https://user.ceng.metu.edu.tr/~emre/Fall2025-DeepLearning.html' },
+  { name: 'Advanced Deep Learning', link: 'https://user.ceng.metu.edu.tr/~emre/CENG502-20252.html' },
+  { name: 'Trustworthy and Responsible AI', link: 'https://metu-trai.github.io' },
 ];
 
 const ACHIEVEMENTS: { title: string; description: string; icon: any; bg: string; highlight?: string }[] = [
@@ -381,8 +387,8 @@ const HomeView = ({ onNavigate, introComplete, onIntroComplete }: { onNavigate: 
         </div>
         
         <div className={`space-y-6 transition-opacity duration-1000 ${introComplete ? 'opacity-100' : 'opacity-0'}`}>
-          <p className="text-lg md:text-xl text-[#5C5C5C] leading-relaxed max-w-2xl">
-                        Top-ranked undergraduate student at METU & AI researcher. <br></br> <br></br>
+          <p className="text-lg md:text-l text-[#5C5C5C] leading-relaxed max-w-2xl">
+                        Top-ranked undergraduate student at METU (#1 CS program in Turkey according to QS, THE, CSRankings) & AI researcher. <br></br> <br></br>
                         Scroll down to learn more about me and my work. 
           </p>
 
@@ -475,7 +481,7 @@ const HomeView = ({ onNavigate, introComplete, onIntroComplete }: { onNavigate: 
        <div className="md:col-span-8 space-y-6 text-[#4A4A4A] leading-relaxed">
          <p>
            I am a senior Computer Engineering student at Middle East Technical University, 
-           consistently ranked 1st in my cohort with a <strong className="text-[#2C2C2C]">4.0/4.0 GPA</strong>.
+           consistently ranked 1st in my cohort with a 4.0 GPA.
          </p>
          <p>
             From operating systems to functional programming I am fond of many computer science topics. Though, I have a strong
@@ -485,8 +491,8 @@ const HomeView = ({ onNavigate, introComplete, onIntroComplete }: { onNavigate: 
          </p>
          <p>
             Currently, I am working with <a href="https://user.ceng.metu.edu.tr/~emre/" target="_blank" rel="noopener noreferrer" className="text-[#D4693F] hover:underline decoration-1 underline-offset-4">Dr. Emre Akbas</a> at METU ImageLab
-            on Concept Bottleneck Models as a guided research student and collaborating with
-            <a href="https://pliang279.github.io" target="_blank" rel="noopener noreferrer" className="text-[#D4693F] hover:underline decoration-1 underline-offset-4"> Dr. Paul Liang</a> at MIT Media Lab on [topic to be revelaed]. 
+            on <strong className="text-[#2C2C2C]">Concept Bottleneck Models</strong> as a guided research student and collaborating with
+            <a href="https://pliang279.github.io" target="_blank" rel="noopener noreferrer" className="text-[#D4693F] hover:underline decoration-1 underline-offset-4"> Dr. Paul Liang</a> at MIT on <strong className="text-[#2C2C2C]">LLM evaluations and alignment</strong>. 
             I am open to both academic and industry roles where I can apply my rigorous understanding computer science and machine learning.
          </p>
 
@@ -503,6 +509,55 @@ const HomeView = ({ onNavigate, introComplete, onIntroComplete }: { onNavigate: 
                ))}
             </div>
          </div> */}
+
+         <div className="pt-6">
+            <div className="bg-[#F9F9F7] border border-[#E5E5E5] rounded-xl p-6 hover:shadow-sm transition-all duration-300">
+              <div className="flex items-start gap-4">
+                <div className="bg-white p-3 rounded-lg border border-[#E5E5E5] shadow-sm shrink-0">
+                  <img src={metuLogo} alt="METU" className="w-10 h-10 object-contain" />
+                </div>
+                <div className="space-y-1 w-full">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                    <h3 className="font-bold text-[#2C2C2C] text-lg leading-snug">
+                      Middle East Technical University (METU)
+                    </h3>
+                    <span className="text-xs font-medium bg-[#E8E6E1] text-[#5C5C5C] px-2 py-1 rounded">2021 - 2026</span>
+                  </div>
+                  <p className="text-[#5C5C5C] font-medium">B.S. in Computer Engineering</p>
+                  <div className="flex items-center gap-3 text-sm text-[#4A4A4A] pt-1">
+                    <span className="flex items-center gap-1.5">
+                       <span className="w-1.5 h-1.5 rounded-full bg-[#D4693F]"></span>
+                       <strong>CGPA:</strong> 4.00 / 4.00
+                    </span>
+                    <span className="text-[#E5E5E5]">|</span>
+                    <span className="flex items-center gap-1.5">
+                       <span className="w-1.5 h-1.5 rounded-full bg-[#D4693F]"></span>
+                       <strong>Rank:</strong> 1st / 280+
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 pt-6 border-t border-[#E5E5E5]">
+                 <h4 className="text-xs font-bold text-[#9CA3AF] uppercase tracking-widest mb-4">
+                   Relevant Graduate-level Coursework
+                 </h4>
+                 <div className="flex flex-wrap gap-2">
+                    {RELEVANT_COURSEWORK.map(course => (
+                      <a 
+                        key={course.name} 
+                        href={course.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-3 py-1.5 bg-white border border-[#E5E5E5] rounded-md text-sm text-[#5C5C5C] shadow-sm hover:border-[#D4693F]/50 hover:text-[#D4693F] transition-colors cursor-pointer"
+                      >
+                        {course.name}
+                      </a>
+                    ))}
+                 </div>
+              </div>
+            </div>
+         </div>
        </div>
     </section>
 
