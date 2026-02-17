@@ -147,7 +147,7 @@ const EXPERIENCES: {
     description: (
         <ul className="list-disc pl-4 space-y-1">
             <li>Worked on LEGOFIT Horizon Euro project, trained ML models for various energy-related forecasting tasks. </li> 
-            <li>Achieved 0.98 R^2 score on predicting monthly and hourly power generation from PV panels and 0.97 R^2 score on predicting heating energy usage. </li> 
+            <li>Achieved 0.98 R² score on predicting monthly and hourly power generation from PV panels and 0.97 R² score on predicting heating energy usage. </li> 
             <li>Developed ms-Mamba (Multi-scale Mamba), a novel time-series architecture challenging SOTA (up to 12% MSE improvements) on 13 benchmark datasets.
                 Submitted to Neurocomputing Journal, currently under review. </li>
             <li>Applied transfer learning methods (LoRA, LoRA+, full-finetuning) for heating energy consumption prediction task showing how transfer learning
@@ -189,7 +189,8 @@ const ACHIEVEMENTS: { title: string; description: string; icon: any; bg: string;
 //   },
   {
     title: "Community Leader",
-    description: "Technical Team Lead & Board Member at METU AI Club. Mentor for METU ACM Student Chapter.",
+      description: "Served as a technical team lead & board member at METU AI Club. Mentoring freshman computer engineering students \
+      through METU ACM Student Chapter.",
     icon: <Users className="w-5 h-5 text-sky-700" />,
     bg: "bg-sky-100",
   }
@@ -387,16 +388,16 @@ const HomeView = ({ onNavigate, introComplete, onIntroComplete }: { onNavigate: 
 
           <div className="flex flex-wrap gap-4 pt-4">
             <Button variant="primary" onClick={() => document.getElementById('experiences')?.scrollIntoView({ behavior: 'smooth' })}>
-              View Experience
+              View Experiences
               <ArrowUpRight className="w-4 h-4 ml-2" />
             </Button>
             <Button variant="outline" onClick={() => window.open('https://www.linkedin.com/in/meric-karadag/', '_blank')}>
               <Linkedin className="w-4 h-4 mr-2" />
               LinkedIn
             </Button>
-            <Button variant="outline" className="border-transparent px-2">
+            {/* <Button variant="outline" onClick={() => window.open('https://github.com/meric-karadag', '_blank')} className="border-transparent px-2">
               <Github className="w-5 h-5" />
-            </Button>
+            </Button> */}
           </div>
         </div>
       </div>
@@ -483,9 +484,9 @@ const HomeView = ({ onNavigate, introComplete, onIntroComplete }: { onNavigate: 
             I am equally passionate about building robust and reliable AI systems.
          </p>
          <p>
-            Currently, I am working with <a href="https://user.ceng.metu.edu.tr/~emre/" className="text-[#D4693F] hover:underline decoration-1 underline-offset-4">Dr. Emre Akbas</a> at METU ImageLab
+            Currently, I am working with <a href="https://user.ceng.metu.edu.tr/~emre/" target="_blank" rel="noopener noreferrer" className="text-[#D4693F] hover:underline decoration-1 underline-offset-4">Dr. Emre Akbas</a> at METU ImageLab
             on Concept Bottleneck Models as a guided research student and collaborating with
-            <a href="https://pliang279.github.io" className="text-[#D4693F] hover:underline decoration-1 underline-offset-4"> Dr. Paul Liang</a> at MIT Media Lab on [topic to be revelaed]. 
+            <a href="https://pliang279.github.io" target="_blank" rel="noopener noreferrer" className="text-[#D4693F] hover:underline decoration-1 underline-offset-4"> Dr. Paul Liang</a> at MIT Media Lab on [topic to be revelaed]. 
             I am open to both academic and industry roles where I can apply my rigorous understanding computer science and machine learning.
          </p>
 
@@ -606,7 +607,7 @@ const HomeView = ({ onNavigate, introComplete, onIntroComplete }: { onNavigate: 
                </div>
                
                <div className="pt-6 mt-auto">
-                 <a href={pub.link} className="inline-flex items-center text-sm font-medium text-[#2C2C2C] hover:text-[#D4693F] transition-colors">
+                 <a href={pub.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-medium text-[#2C2C2C] hover:text-[#D4693F] transition-colors">
                    Read Paper
                    <ExternalLink className="w-3 h-3 ml-2" />
                  </a>
@@ -665,7 +666,7 @@ const HomeView = ({ onNavigate, introComplete, onIntroComplete }: { onNavigate: 
          <div className="space-y-4">
            <h2 className="text-3xl font-bold text-[#2C2C2C]">Interested in collaboration?</h2>
            <p className="text-[#5C5C5C] max-w-lg mx-auto">
-             I am currently open to discussing opportunities in robust AI, interpretability, and production ML engineering.
+             I am open to discussing any collaboration opportunities in AI/ML, and related fields as well as non-technical topics.
            </p>
          </div>
          
@@ -805,7 +806,7 @@ const ContactForm = () => {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           className="w-full px-4 py-2 rounded-lg border border-[#D4D4D4] focus:ring-2 focus:ring-[#D4693F] focus:border-transparent outline-none bg-[#F9F9F7]"
-          placeholder="How can we collaborate?"
+          placeholder="Hey I have a really cool idea! Wanna collaborate?"
           required
         />
       </div>
@@ -1022,9 +1023,9 @@ export default function App() {
             © 2026 Yusuf Meric Karadag. Built with React & Tailwind.
           </p>
           <div className="flex space-x-6">
-            <a href="#" className="text-[#9CA3AF] hover:text-[#D4693F] transition-colors">GitHub</a>
-            <a href="#" className="text-[#9CA3AF] hover:text-[#D4693F] transition-colors">LinkedIn</a>
-            <a href="#" className="text-[#9CA3AF] hover:text-[#D4693F] transition-colors">Scholar</a>
+            <a href="#" target="_blank" rel="noopener noreferrer" className="text-[#9CA3AF] hover:text-[#D4693F] transition-colors">GitHub</a>
+            <a href="#" target="_blank" rel="noopener noreferrer" className="text-[#9CA3AF] hover:text-[#D4693F] transition-colors">LinkedIn</a>
+            {/* <a href="#" target="_blank" rel="noopener noreferrer" className="text-[#9CA3AF] hover:text-[#D4693F] transition-colors">Scholar</a> */}
           </div>
         </div>
       </footer>
