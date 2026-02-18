@@ -225,7 +225,7 @@ const PUBLICATIONS = [
     venue: "Submitted to ICML 2026",
     status: "Under Review",
     year: "2026",
-    link: "#"
+    link: ""
   },
   {
     title: "ms-Mamba: Multi-scale Mamba for Time-Series Forecasting",
@@ -681,12 +681,18 @@ const HomeView = ({ onNavigate, introComplete, onIntroComplete, onDownloadCV }: 
                   </p>
                </div>
                
-               <div className="pt-6 mt-auto">
-                 <a href={pub.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-medium text-[#2C2C2C] hover:text-[#D4693F] transition-colors">
-                   Read Paper
-                   <ExternalLink className="w-3 h-3 ml-2" />
-                 </a>
-               </div>
+                 <div className="pt-6 mt-auto">
+                   {pub.link ? (
+                     <a href={pub.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-sm font-medium text-[#2C2C2C] hover:text-[#D4693F] transition-colors">
+                       Read Paper
+                       <ExternalLink className="w-3 h-3 ml-2" />
+                     </a>
+                   ) : (
+                     <span className="inline-flex items-center text-sm font-medium text-gray-400 cursor-not-allowed">
+                       Not Yet Published
+                     </span>
+                   )}
+                 </div>
             </Card>
           ))}
        </div>
@@ -940,7 +946,32 @@ export default function App() {
   const [currentView, setCurrentView] = useState('home'); // 'home' | 'projects'
   const [user, setUser] = useState<User | null>(null);
   const [introComplete, setIntroComplete] = useState(false);
-  const [locationData, setLocationData] = useState<{city: string, country: string} | null>(null);
+  const [locationData, setLocationData] = useState<{city: string, country: string, latitude: number, longitude: number} | null>(null);
+
+  const isDashboard = window.location.pathname.endsWith('/dashboard');
+  const [DashboardComponent, setDashboardComponent] = useState<React.ComponentType | null>(null);
+
+  useEffect(() => {
+    if (isDashboard && import.meta.env.DEV) {
+      import('./AnalyticsDashboard').then(module => {
+        setDashboardComponent(() => module.default);
+      });
+    }
+  }, [isDashboard]);
+
+  if (isDashboard && import.meta.env.DEV) {
+    if (!DashboardComponent) {
+      return (
+        <div className="min-h-screen flex items-center justify-center bg-[#F9F9F7] text-[#2C2C2C]">
+          <div className="flex flex-col items-center gap-4">
+            <Loader2 className="w-8 h-8 animate-spin text-[#D4693F]" />
+            <p className="font-medium animate-pulse">Loading Command Center...</p>
+          </div>
+        </div>
+      );
+    }
+    return <DashboardComponent />;
+  }
 
   // --- Auth & Analytics Effects ---
   useEffect(() => {
@@ -967,13 +998,18 @@ export default function App() {
         const res = await fetch('https://ipapi.co/json/');
         const data = await res.json();
         if (data && !data.error) {
-          setLocationData({ city: data.city, country: data.country_name });
+          setLocationData({ 
+            city: data.city, 
+            country: data.country_name,
+            latitude: data.latitude,
+            longitude: data.longitude
+          });
         } else {
-             setLocationData({ city: 'Unknown', country: 'Unknown' });
+             setLocationData({ city: 'Unknown', country: 'Unknown', latitude: 0, longitude: 0 });
         }
       } catch (e) {
         console.error("Location fetch failed", e);
-        setLocationData({ city: 'Unknown', country: 'Unknown' });
+        setLocationData({ city: 'Unknown', country: 'Unknown', latitude: 0, longitude: 0 });
       }
     };
     fetchLocation();
@@ -991,7 +1027,7 @@ export default function App() {
           timestamp: serverTimestamp(),
           local_time: new Date().toString(),
           user_id: user.uid,
-          location: locationData || { city: 'Unknown', country: 'Unknown' }
+          location: locationData || { city: 'Unknown', country: 'Unknown', latitude: 0, longitude: 0 }
         });
       } catch (err) {
         console.error("Analytics Error:", err);
