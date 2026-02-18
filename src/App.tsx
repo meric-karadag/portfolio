@@ -763,8 +763,8 @@ const HomeView = ({ onNavigate, introComplete, onIntroComplete, onDownloadCV }: 
                        <Mail className="w-5 h-5 text-[#D4693F] mt-0.5 shrink-0" />
                        <div className="space-y-1">
                           <p className="text-sm font-medium text-[#2C2C2C]">Email</p>
-                          <a href="mailto:merickdag@gmail.com" className="block text-sm text-[#5C5C5C] hover:text-[#D4693F] transition-colors">ymerickaradag@gmail.com</a>
-                          <a href="mailto:meric.karadag@metu.edu.tr" className="block text-sm text-[#5C5C5C] hover:text-[#D4693F] transition-colors">karadag.y@metu.edu.tr</a>
+                          <a href="mailto:merickdag@gmail.com" className="block text-sm text-[#5C5C5C] hover:text-[#D4693F] transition-colors">merickdag@gmail.com</a>
+                          <a href="mailto:meric.karadag@metu.edu.tr" className="block text-sm text-[#5C5C5C] hover:text-[#D4693F] transition-colors">meric.karadag@metu.edu.tr</a>
                        </div>
                     </div>
                     
