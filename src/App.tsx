@@ -51,6 +51,7 @@ const NAV_LINKS = [
   { name: 'Experiences', href: '#experiences', view: 'home' },
   { name: 'Achievements', href: '#achievements', view: 'home' },
   { name: 'Publications', href: '#publications', view: 'home' },
+  { name: 'Contact', href: '#contact', view: 'home'},
   { name: 'Projects', href: '#projects', view: 'projects' }, 
 ];
 
@@ -74,8 +75,8 @@ const EXPERIENCES: {
     advisor: 'Dr. Emre Akbas',
     description: (
       <ul className="list-disc pl-4 space-y-1">
-        <li>We aim to enhance Concept Bottleneck Models (CBMs) by introducing a novel "naming loss".</li>
-        <li>We work towards developing quantitative evaluation pipelines for CBMs using MLLMs as proxy evaluators.</li>
+        <li>Developing a novel "naming loss" to improve Concept Bottleneck Models (CBMs), enforcing tighter semantic alignment between learned concepts and human language during training.</li>
+        <li>Building quantitative evaluation pipelines for CBMs that use Multimodal LLMs as automated proxy evaluators.</li>
       </ul>
     ),
     // tags: ['CBMs', 'Interpretability', 'Sparse Autoencoders', 'Python'],
@@ -91,9 +92,9 @@ const EXPERIENCES: {
     advisor: 'Dr. Paul Liang',
     description:(
         <ul className="list-disc pl-4 space-y-1">
-            <li>Investigated LLM evaluations and alignment.</li>
-            <li>Responsible for the design and implementation of experimental suites.</li>
-            <li>More information will be revealed about the project and outcomes after ICML'26 reviews.</li>
+            <li>Conducting research on LLM evaluation methodology and alignment.</li>
+            <li>Designing and implementing experimental suites to test and validate our hypotheses.</li>
+            <li>Full details to be disclosed after ICML '26 reviews.</li>
         </ul>
     ),
     // tags: ['LLM Alignment', 'Medical VLM', 'Counterfactuals', 'PyTorch'],
@@ -130,8 +131,8 @@ const EXPERIENCES: {
     period: 'June 2025 – July 2025',
     description:(
         <ul className="list-disc pl-4 space-y-1">
-            <li>Prototyped a Q&A agent for the website "binyaprak.com", a mentorship platform supported by Microsoft Turkey. </li>
-            <li>Used Copilot Studio's agentic AI tools to increase user engagement to recommend suitable mentors to mentees.</li>
+            <li>Prototyped a conversational Q&A agent for <a href="https://binyaprak.com" target="_blank" rel="noopener noreferrer" className="text-[#D4693F] hover:underline decoration-1 underline-offset-4">binyaprak.com</a>, a Microsoft Turkey-supported mentorship platform. </li>
+            <li>Used Copilot Studio's agentic AI tooling to personalize mentor recommendations and improve user engagement.</li>
        </ul>),
     // tags: ['AI Agents', 'Production ML', 'Copilot Studio'],
     tags: [],
@@ -146,19 +147,34 @@ const EXPERIENCES: {
     advisor: 'Dr. Sinan Kalkan',
     description: (
         <ul className="list-disc pl-4 space-y-1">
-            <li>Worked on LEGOFIT Horizon Euro project, trained ML models for various energy-related forecasting tasks. </li> 
-            <li>Achieved 0.98 R² score on predicting monthly and hourly power generation from PV panels and 0.97 R² score on predicting heating energy usage. </li> 
-            <li>Developed ms-Mamba (Multi-scale Mamba), a novel time-series architecture challenging SOTA (up to 12% MSE improvements) on 13 benchmark datasets.
-                Submitted to Neurocomputing Journal, currently under review. </li>
-            <li>Applied transfer learning methods (LoRA, LoRA+, full-finetuning) for heating energy consumption prediction task showing how transfer learning
-                can improve data efficiency and performance in low-data regimes. Additionally, showed PEFT methods can slightly reduce overfitting in expense of accuracy. 
-                Work published at Advanced Engineering Informatics.
-            </li>
+        <li>Built and trained ML models for energy forecasting tasks under the LEGOFIT Horizon Europe project, achieving R² scores of 0.98 on PV power generation and 0.97 on heating energy usage predictions. </li> 
+        <li> Designed ms-Mamba (Multi-scale Mamba), a novel time-series architecture that challenges state-of-the-art results across 13 benchmark datasets with up to 12% MSE improvements. Currently under review at Neurocomputing.</li>
+        <li>Investigated transfer learning approaches (LoRA, LoRA+, full fine-tuning) for heating energy prediction, demonstrating improved data efficiency in low-data regimes and showing that PEFT methods can modestly reduce
+          overfitting at a slight cost to accuracy. Published in Advanced Engineering Informatics. </li>
         </ul>
     ),
       // tags: ['Time-Series', 'Mamba Architecture', 'SOTA'],
     tags: [],
     logo: metuRomerLogo
+  },
+  {
+    id: 'metu-ta',
+    role: 'Undergraduate Teaching Assistant',
+    lab: 'METU Computer Engineering Department',
+    location: 'Ankara, Turkey',
+    period: 'Oct 2023 – June 2025',
+    description: (
+        <ul className="list-disc pl-4 space-y-1">
+            <li>TA for CENG111: Introduction to Computer Engineering Concepts (Python) - Fall 2023. Aided
+                ~40 student lab sessions, contributed to grading. </li> 
+            
+            <li>TA for CENG213: Data Structures (C++) - Fall 2024 and Spring 2024. Aided
+                ~40 student lab sessions in two consecutive semesters. </li> 
+        </ul>
+    ),
+      // tags: ['Time-Series', 'Mamba Architecture', 'SOTA'],
+    tags: [],
+    logo: metuLogo
   }
 ];
 
@@ -257,9 +273,9 @@ const REFERENCES = [
 ];
 
 const NEWS = [
-  { date: 'Spring 2026', content: 'Joined METU ImageLab for guided research on Concept Bottleneck Models.' },
-  { date: 'Jan 2026', content: 'Submitted [TITLE TO BE REVEALED SOON] to ICML 2026.' },
-  { date: 'Oct 2025', content: 'Started Research Internship at MIT, supervised by Dr. Paul Liang'},
+  { date: 'Spring 2026', content: 'Started a guided research project at METU ImageLab with Dr. Emre Akbas, working on improving Concept Bottleneck Models.' },
+  { date: 'Jan 2026', content: 'Submitted a paper to ICML 2026 — details to be revealed after reviews.'},
+  { date: 'Oct 2025', content: 'Joined MIT as a research intern, working with Dr. Paul Liang on LLM evaluation and alignment.'},
 ];
 
 const AFFILIATIONS = [
@@ -267,7 +283,8 @@ const AFFILIATIONS = [
   { name: 'TU Munich', short: 'TUM', logo: tumLogo, color: 'bg-blue-100 text-blue-800' },
   { name: 'Helmholtz Munich', short: 'HMGU', logo: helmholtzLogo, color: 'bg-cyan-100 text-cyan-800' },
   { name: 'Microsoft', short: 'MSFT', logo: msftLogo, color: 'bg-sky-100 text-sky-800' },
-  { name: 'METU ROMER', short: 'METU', logo: metuLogo, color: 'bg-red-100 text-red-800' },
+  { name: 'METU ROMER', short: 'METU', logo: metuRomerLogo, color: 'bg-red-100 text-red-800' },
+  { name: 'METU ImageLab', short: 'METU', logo: metuLogo, color: 'bg-red-100 text-red-800' },
 ];
 
 /*
@@ -375,7 +392,7 @@ const Typewriter = ({ text, delay = 50, startDelay = 0, onComplete }: { text: st
 
 // --- Sub-Views ---
 
-const HomeView = ({ onNavigate, introComplete, onIntroComplete }: { onNavigate: (view: string) => void, introComplete: boolean, onIntroComplete: () => void }) => (
+const HomeView = ({ onNavigate, introComplete, onIntroComplete, onDownloadCV }: { onNavigate: (view: string) => void, introComplete: boolean, onIntroComplete: () => void, onDownloadCV: () => void }) => (
   <div className="space-y-20 md:space-y-32 pb-20">
     {/* Hero Section */}
     <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
@@ -388,22 +405,20 @@ const HomeView = ({ onNavigate, introComplete, onIntroComplete }: { onNavigate: 
         
         <div className={`space-y-6 transition-opacity duration-1000 ${introComplete ? 'opacity-100' : 'opacity-0'}`}>
           <p className="text-lg md:text-l text-[#5C5C5C] leading-relaxed max-w-2xl">
-                        Top-ranked undergraduate student at METU (#1 CS program in Turkey according to QS, THE, CSRankings) & AI researcher. <br></br> <br></br>
-                        Scroll down to learn more about me and my work. 
+                        Top-ranked undergraduate student at METU, #1 CS Program in Turkey (QS, THE, CSRankings).
+                        
+                        Deep learning researcher with experience at MIT & TU Munich, working on multi-modal models, representation learning and AI alignment.   <br></br> <br></br>
+                        {/* Scroll down to learn more about me and my work.  */}
           </p>
 
           <div className="flex flex-wrap gap-4 pt-4">
-            <Button variant="primary" onClick={() => document.getElementById('experiences')?.scrollIntoView({ behavior: 'smooth' })}>
-              View Experiences
-              <ArrowUpRight className="w-4 h-4 ml-2" />
+            <Button variant="primary" onClick={onDownloadCV}>
+              <Download className="w-4 h-4 mr-2" />
+              View CV
             </Button>
-            <Button variant="outline" onClick={() => window.open('https://www.linkedin.com/in/meric-karadag/', '_blank')}>
-              <Linkedin className="w-4 h-4 mr-2" />
-              LinkedIn
+            <Button variant="ghost" onClick={() => window.open('https://www.linkedin.com/in/meric-karadag/', '_blank')} className="px-2 text-[#5C5C5C] hover:text-[#0077B5]">
+              <Linkedin className="w-5 h-5" />
             </Button>
-            {/* <Button variant="outline" onClick={() => window.open('https://github.com/meric-karadag', '_blank')} className="border-transparent px-2">
-              <Github className="w-5 h-5" />
-            </Button> */}
           </div>
         </div>
       </div>
@@ -480,20 +495,18 @@ const HomeView = ({ onNavigate, introComplete, onIntroComplete }: { onNavigate: 
        </div>
        <div className="md:col-span-8 space-y-6 text-[#4A4A4A] leading-relaxed">
          <p>
-           I am a senior Computer Engineering student at Middle East Technical University, 
-           consistently ranked 1st in my cohort with a 4.0 GPA.
+           I am a senior Computer Engineering student at Middle East Technical University, ranked 1st in a cohort of 280+ with a perfect 4.0 GPA
          </p>
          <p>
-            From operating systems to functional programming I am fond of many computer science topics. Though, I have a strong
-            foundation in machine learning and deep learning. I am particularly interested in <strong className="text-[#2C2C2C]">multi-modal models</strong>,
-            <strong className="text-[#2C2C2C]"> representation learning</strong>, and <strong className="text-[#2C2C2C]">societal aspects of AI</strong>, 
-            I am equally passionate about building robust and reliable AI systems.
+            My interests span the full depth of computer science, from operating systems to functional programmin, but my work so-far has been focused on machine learning and deep learning. 
+            I am particularly interested in <strong className="text-[#2C2C2C]">multi-modal models, interpretability, representation learning</strong>,
+            and <strong className="text-[#2C2C2C]">societal aspects & implications of AI systems</strong>.
          </p>
          <p>
             Currently, I am working with <a href="https://user.ceng.metu.edu.tr/~emre/" target="_blank" rel="noopener noreferrer" className="text-[#D4693F] hover:underline decoration-1 underline-offset-4">Dr. Emre Akbas</a> at METU ImageLab
-            on <strong className="text-[#2C2C2C]">Concept Bottleneck Models</strong> as a guided research student and collaborating with
+            on improving <strong className="text-[#2C2C2C]">Concept Bottleneck Models</strong> as a guided research student and collaborating with
             <a href="https://pliang279.github.io" target="_blank" rel="noopener noreferrer" className="text-[#D4693F] hover:underline decoration-1 underline-offset-4"> Dr. Paul Liang</a> at MIT on <strong className="text-[#2C2C2C]">LLM evaluations and alignment</strong>. 
-            I am open to both academic and industry roles where I can apply my rigorous understanding computer science and machine learning.
+            I am actively considering research-oriented roles (academic or industry) where I can apply my rigorous understanding of computer science and machine learning to push ideas further.
          </p>
 
          {/* <div className="pt-6">
@@ -575,8 +588,15 @@ const HomeView = ({ onNavigate, introComplete, onIntroComplete }: { onNavigate: 
                 <div className="flex items-center gap-3">
                    {/* @ts-ignore - logo property exists on some items */}
                    {exp.logo && <img src={exp.logo} alt={exp.lab} className="w-10 h-10 object-contain" />}
-                   <div className="text-xs font-bold text-[#D4693F] uppercase tracking-wider">
-                     {exp.lab}
+                   <div className="flex flex-col">
+                     <span className="text-xs font-bold text-[#D4693F] uppercase tracking-wider">
+                       {exp.lab}
+                     </span>
+                     {exp.location && (
+                       <span className="text-[10px] font-medium text-[#9CA3AF] mt-0.5">
+                         {exp.location}
+                       </span>
+                     )}
                    </div>
                 </div>
               </div>
@@ -679,7 +699,8 @@ const HomeView = ({ onNavigate, introComplete, onIntroComplete }: { onNavigate: 
           <h2 className="text-2xl md:text-3xl font-semibold text-[#2C2C2C]">Projects & Blogs</h2>
           <p className="text-[#5C5C5C]">
             Beyond research, I try to build cool projects and write mini-blogs. <br></br>
-            Check out the full list of projects and blogs.
+            {/* Check out the full list of projects and blogs. */}
+            This section is currently under construction. Please check back soon!
           </p>
           <Button variant="outline" onClick={() => onNavigate('projects')}>
              Explore Projects
@@ -721,25 +742,50 @@ const HomeView = ({ onNavigate, introComplete, onIntroComplete }: { onNavigate: 
          <div className="space-y-4">
            <h2 className="text-3xl font-bold text-[#2C2C2C]">Interested in collaboration?</h2>
            <p className="text-[#5C5C5C] max-w-lg mx-auto">
-             I am open to discussing any collaboration opportunities in AI/ML, and related fields as well as non-technical topics.
+              Whether it's a research collaboration, a project idea, or just an interesting conversation  I'd love to hear from you.
            </p>
          </div>
          
-         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-           <Button variant="primary" onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}>
-             <Mail className="w-4 h-4 mr-2" />
-             Send Message
-           </Button>
-           <Button variant="outline">
-              <Download className="w-4 h-4 mr-2" />
-              Download Resume
-           </Button>
-         </div>
+         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto text-left">
+            {/* Contact Info Card */}
+            <div className="bg-[#F9F9F7] p-8 rounded-2xl border border-[#E5E5E5] space-y-6 h-full flex flex-col justify-between">
+                <div className="space-y-6">
+                  <div>
+                      <h3 className="text-lg font-bold text-[#2C2C2C] mb-4">Contact Details</h3>
+                      <div className="space-y-4">
+                        <div className="flex items-start gap-3 text-[#5C5C5C]">
+                            <div className="w-8 h-8 rounded-full bg-white border border-[#E5E5E5] flex items-center justify-center shrink-0 text-[#D4693F] mt-0.5">
+                            <Mail className="w-4 h-4" />
+                            </div>
+                            <div className="flex flex-col text-sm">
+                            <a href="mailto:merickdag@gmail.com" className="hover:text-[#D4693F] transition-colors">merickdag@gmail.com</a>
+                            <a href="mailto:meric.karadag@metu.edu.tr" className="hover:text-[#D4693F] transition-colors">meric.karadag@metu.edu.tr</a>
+                            </div>
+                        </div>
 
-         {/* Actual Contact Form */}
-         <div id="contact-form" className="pt-12 border-t border-[#E5E5E5] mt-12">
-            <h3 className="text-lg font-semibold text-[#2C2C2C] mb-6">Or send me a message directly</h3>
-            <ContactForm />
+                        <div className="flex items-start gap-3 text-[#5C5C5C]">
+                            <div className="w-8 h-8 rounded-full bg-white border border-[#E5E5E5] flex items-center justify-center shrink-0 text-[#D4693F] mt-0.5">
+                                <div className="w-4 h-4 flex items-center justify-center font-bold text-[10px]">📍</div>
+                            </div>
+                            <span className="text-sm mt-1.5">Ankara, Turkey</span>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+
+                <a href="https://linkedin.com/in/meric-karadag/" target="_blank" rel="noopener noreferrer" className="block w-full pt-6">
+                  <Button variant="secondary" className="w-full justify-center">
+                    <Linkedin className="w-4 h-4 mr-2" />
+                    Connect on LinkedIn
+                  </Button>
+                </a>
+            </div>
+
+            {/* Form */}
+            <div id="contact-form" className="bg-white p-8 rounded-2xl border border-[#E5E5E5] h-full">
+               <h3 className="text-lg font-bold text-[#2C2C2C] mb-6">Send me a message</h3>
+               <ContactForm />
+            </div>
          </div>
        </div>
     </section>
@@ -766,7 +812,7 @@ const ProjectsView = ({ onNavigate }: { onNavigate: (view: string) => void }) =>
           <span className="text-[#D4693F]">& Blogs</span>
         </h1>
         <p className="text-lg text-[#5C5C5C] max-w-2xl leading-relaxed">
-          A collection (to be) of my open source projects, experimental implementations, developer logs and blogs. 
+          A collection (to be) of my open source projects, experimental implementations, writing. Stay tuned for stuff coming out soon! 
         </p>
       </div>
     </div>
@@ -840,7 +886,7 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto text-left">
+    <form onSubmit={handleSubmit} className="space-y-4 w-full text-left">
       <div>
         <label htmlFor="email" className="block text-sm font-medium text-[#5C5C5C] mb-1">Email</label>
         <input 
@@ -973,14 +1019,14 @@ export default function App() {
   const trackDownload = async () => {
     if(!user) return;
     try {
-       await addDoc(collection(db, COLLECTION_PATH.ANALYTICS), {
+      window.open('https://drive.google.com/file/d/1e-4csAvV14u88hK63XH5KB1JIowfGzCB/view?usp=sharing', '_blank');
+      await addDoc(collection(db, COLLECTION_PATH.ANALYTICS), {
           event_type: 'cv_download',
           timestamp: serverTimestamp(),
           local_time: new Date().toString(),
           user_id: user.uid,
           location: locationData || { city: 'Unknown', country: 'Unknown' }
         });
-        alert("Thanks for downloading! (Analytics event tracked)");
     } catch(e) {
       console.error(e);
     }
@@ -1065,7 +1111,12 @@ export default function App() {
 
       <main className="pt-32 pb-16 px-6 max-w-6xl mx-auto">
         {currentView === 'home' ? (
-          <HomeView onNavigate={handleNavigate} introComplete={introComplete} onIntroComplete={() => setIntroComplete(true)} />
+          <HomeView 
+            onNavigate={handleNavigate} 
+            introComplete={introComplete} 
+            onIntroComplete={() => setIntroComplete(true)} 
+            onDownloadCV={trackDownload}
+          />
         ) : (
           <ProjectsView onNavigate={handleNavigate} />
         )}
@@ -1078,9 +1129,9 @@ export default function App() {
             © 2026 Yusuf Meric Karadag. Built with React & Tailwind.
           </p>
           <div className="flex space-x-6">
+            <button onClick={trackDownload} className="text-[#9CA3AF] hover:text-[#D4693F] transition-colors text-sm font-medium">Download CV</button>
             <a href="#" target="_blank" rel="noopener noreferrer" className="text-[#9CA3AF] hover:text-[#D4693F] transition-colors">GitHub</a>
-            <a href="#" target="_blank" rel="noopener noreferrer" className="text-[#9CA3AF] hover:text-[#D4693F] transition-colors">LinkedIn</a>
-            {/* <a href="#" target="_blank" rel="noopener noreferrer" className="text-[#9CA3AF] hover:text-[#D4693F] transition-colors">Scholar</a> */}
+            <a href="https://linkedin.com/in/meric-karadag/" target="_blank" rel="noopener noreferrer" className="text-[#9CA3AF] hover:text-[#D4693F] transition-colors">LinkedIn</a>
           </div>
         </div>
       </footer>
