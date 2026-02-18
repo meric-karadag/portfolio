@@ -498,7 +498,7 @@ const HomeView = ({ onNavigate, introComplete, onIntroComplete, onDownloadCV }: 
            I am a senior Computer Engineering student at Middle East Technical University, ranked 1st in a cohort of 280+ with a perfect 4.0 GPA
          </p>
          <p>
-            My interests span the full depth of computer science, from operating systems to functional programmin, but my work so-far has been focused on machine learning and deep learning. 
+            My interests span the full depth of computer science, from operating systems to functional programming, but my work so-far has been focused on machine learning and deep learning. 
             I am particularly interested in <strong className="text-[#2C2C2C]">multi-modal models, interpretability, representation learning</strong>,
             and <strong className="text-[#2C2C2C]">societal aspects & implications of AI systems</strong>.
          </p>
