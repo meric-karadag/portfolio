@@ -21,8 +21,8 @@ import {
   MapPin, // Used in Contact Details
   GraduationCap,
   ExternalLink,
-  CheckCircle,
-  AlertCircle,
+  // CheckCircle, // Removed (Unused)
+  // AlertCircle, // Removed (Unused)
   // Trophy, // Removed
   // Terminal, // Removed
   Loader2 // Re-added
@@ -871,6 +871,7 @@ const ProjectsView = ({ onNavigate }: { onNavigate: (view: string) => void }) =>
 );
 
 // --- Contact Form Component (With Backend) ---
+/*
 const ContactForm = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -919,23 +920,22 @@ const ContactForm = () => {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           className="w-full px-4 py-2 rounded-lg border border-[#D4D4D4] focus:ring-2 focus:ring-[#D4693F] focus:border-transparent outline-none bg-[#F9F9F7]"
-          placeholder="Hey I have a really cool idea! Wanna collaborate?"
+          placeholder="How can we collaborate?"
           required
         />
       </div>
       
       <Button 
         type="submit" 
-        variant="primary" 
-        className="w-full"
+        className="w-full justify-center bg-[#D4693F] hover:bg-[#B54D28] text-white disabled:opacity-70 disabled:cursor-not-allowed"
         disabled={status === 'loading' || status === 'success'}
       >
         {status === 'loading' ? (
           <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Sending...</>
         ) : status === 'success' ? (
-          <><CheckCircle className="w-4 h-4 mr-2" /> Sent Successfully</>
+          <><CheckCircle className="w-4 h-4 mr-2" /> Message Sent!</>
         ) : status === 'error' ? (
-           <><AlertCircle className="w-4 h-4 mr-2" /> Error - Try Again</>
+           <><AlertCircle className="w-4 h-4 mr-2" /> Error. Try again.</>
         ) : (
           'Send Message'
         )}
@@ -943,6 +943,7 @@ const ContactForm = () => {
     </form>
   );
 };
+*/
 
 // --- Main App ---
 
